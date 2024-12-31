@@ -31,7 +31,15 @@ This repository contains various Python project ideas for managing personal fina
 
 ---
 
-### 3. Automated Envelope Budgeting System
+### 3. Housing Costs Calculator
+**Scope**: Check feasibility of different housing strategies.
+
+- **Features**:
+  - Mortgage vs Preselling vs Rent
+
+- **Tech Stack**: `pandas`, and `plotly` for an interactive interface.
+
+### 4. Automated Envelope Budgeting System
 **Scope**: Create a digital envelope budgeting system to allocate budgets to specific “envelopes” (like groceries, rent, savings, etc.).
 
 - **Features**:
