@@ -209,6 +209,7 @@ class BudgetCalculator:
         liabilities_values = []
         house_values = []
         investments_values = []
+        housing_costs = []
         cashflow_values = []
 
         for month in range(1, months + 1):
@@ -256,14 +257,16 @@ class BudgetCalculator:
             savings_values.append(savings)
             liabilities_values.append(liabilities)
             house_values.append(house_value)
+            housing_costs.append(self.housing_strategy.calculate_housing_cost())
 
             net_worth_values.append(savings + investments - liabilities + house_value)
 
         df = pd.DataFrame(
             {
                 "net_worth": net_worth_values,
-                "house_values": house_values,
-                "cashflows": cashflow_values,
+                "house_value": house_values,
+                "housing_cost": housing_costs,
+                "cashflow": cashflow_values,
                 "investments": investments_values,
                 "savings": savings_values,
                 "liabilities": liabilities_values,
@@ -272,7 +275,7 @@ class BudgetCalculator:
         )
 
         print(f"\nEnd of Month {months}:", df.iloc[-1], sep="\n")
-        print(f"\n{df.cashflows.value_counts().sort_index()}")
+        print(f"\n{df.cashflow.value_counts().sort_index()}")
         return df
 
 
@@ -282,7 +285,8 @@ class Visualizer:
     @staticmethod
     def plot_net_worth(cashflow) -> None:
         plt = px.line(
-            cashflow, y=["net_worth", "investments", "house_values", "cashflows"]
+            cashflow,
+            y=["net_worth", "investments", "house_value", "housing_cost", "cashflow"],
         )
         plt.update_layout(
             title="Finance Timeline",
