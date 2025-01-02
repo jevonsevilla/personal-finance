@@ -1,5 +1,7 @@
 import pandas as pd
 
+from visualizer import Print
+
 
 def calculate_ammortization_schedule(principal, annual_rate, years) -> pd.DataFrame:
     monthly_rate = annual_rate / 12
@@ -28,10 +30,13 @@ def calculate_ammortization_schedule(principal, annual_rate, years) -> pd.DataFr
         )
         cashout += monthly_payment
 
-    print("Bank Loan Details:")
-    print("total principal:", principal)
-    print("total cashout for loan:", cashout)
-    print("monthly payment:", monthly_payment)
+    stats = {
+        "total principal": principal,
+        "total cashout for loan": cashout,
+        "monthly payment": monthly_payment,
+    }
+
+    Print.print_dict("Bank Loan Details", stats)
 
     return pd.DataFrame(schedule)
 
