@@ -317,7 +317,7 @@ def main() -> pd.DataFrame:
     preselling_house_value = 22506000
     interest_free_downpayment = 2370665.91
     preselling_lump_sum = 17644661.35
-    preselling_loan_dp = preselling_lump_sum * 0.2
+    # preselling_loan_dp = preselling_lump_sum * 0.2
     preselling_loan_term_months = 240
     preselling_property_tax = 0
     preselling_maintenance_cost = 0
@@ -414,6 +414,8 @@ def main() -> pd.DataFrame:
     )
 
     Visualizer.plot_net_worth(net_worth_rent)
+
+    return net_worth_preselling
 
 
 if __name__ == "__main__":
