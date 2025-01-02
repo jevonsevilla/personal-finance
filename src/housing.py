@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
 import pandas as pd
-import plotly.express as px
 
 from interest import calculate_ammortization_schedule
+from visualizer import Visualizer
 
 pd.options.display.float_format = "{:,.2f}".format
 
@@ -277,24 +277,6 @@ class BudgetCalculator:
         print(f"\nEnd of Month {months}:", df.iloc[-1], sep="\n")
         print(f"\n{df.cashflow.value_counts().sort_index()}")
         return df
-
-
-class Visualizer:
-    """class to visualize results."""
-
-    @staticmethod
-    def plot_net_worth(cashflow) -> None:
-        plt = px.line(
-            cashflow,
-            y=["net_worth", "investments", "house_value", "housing_cost", "cashflow"],
-        )
-        plt.update_layout(
-            title="Finance Timeline",
-            xaxis_title="month",
-            yaxis_title="pesos",
-            hovermode="x unified",  # Ensures that hover information for the same x is shown for both traces
-        )
-        plt.show()
 
 
 # Sample usage
