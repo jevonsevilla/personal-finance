@@ -37,6 +37,7 @@ def calculate_ammortization_schedule(principal, annual_rate, years) -> pd.DataFr
     }
 
     Print.print_dict("Bank Loan Details", stats)
+    print()
 
     return pd.DataFrame(schedule)
 
