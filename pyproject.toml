@@ -1,7 +1,7 @@
 [project]
 name = "personal-finance"
 version = "0.1.0"
-description = "Add your description here"
+description = "Project containing small tasks related to personal finance."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
