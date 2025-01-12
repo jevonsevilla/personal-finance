@@ -187,7 +187,7 @@ class BudgetCalculator:
         print(
             f"\nCashflow Distribution:\n{projection.cashflow.value_counts().sort_index()}"
         )
-        print(f"\nNegative Value Months:\n{projection[(projection<0).any(axis=1)]}")
+        print(f"\nNegative Value Months:\n{projection[(projection < 0).any(axis=1)]}")
 
 
 def main():
@@ -280,16 +280,6 @@ def main():
 
         # Plot results
         Plots.plot_net_worth(projection)
-
-    # Example usage
-    housing_strategy = MortgageStrategy(
-        house_value=22506000,
-        down_payment=22506000 * 0.2,
-        loan_term_months=240,
-        loan_interest_rate=HOUSING_LOAN_INTEREST,
-        property_tax_rate=PROPERTY_TAX_RATE,
-        maintenance_cost_rate=MAINTENANCE_COST_RATE,
-    )
 
     run_financial_projection(mortgage_strategy)
     run_financial_projection(preselling_strategy)
