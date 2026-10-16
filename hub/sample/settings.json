@@ -1,0 +1,29 @@
+{
+  "currency": "₱",
+  "monthly_take_home": 85000,
+  "monthly_expenses": 45000,
+  "work_hours_per_week": 40,
+  "safe_withdrawal_rate_pct": 4.0,
+  "milestones": [
+    {
+      "name": "Streaming subscriptions",
+      "monthly_cost": 800
+    },
+    {
+      "name": "Phone & internet",
+      "monthly_cost": 2500
+    },
+    {
+      "name": "Electricity",
+      "monthly_cost": 4500
+    },
+    {
+      "name": "Groceries",
+      "monthly_cost": 12000
+    },
+    {
+      "name": "Rent",
+      "monthly_cost": 18000
+    }
+  ]
+}

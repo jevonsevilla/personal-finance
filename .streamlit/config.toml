@@ -1,0 +1,13 @@
+[browser]
+# Personal finance data: don't send usage statistics to Streamlit.
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+
+# Accent matches the chart palette, stepped for each mode.
+[theme.light]
+primaryColor = "#2a78d6"
+
+[theme.dark]
+primaryColor = "#3987e5"

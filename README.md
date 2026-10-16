@@ -4,6 +4,30 @@ This repository contains various Python project ideas for managing personal fina
 
 ---
 
+## Finance Hub
+
+A local Streamlit app that tracks your investments and shows how fast your money earns money.
+
+```bash
+uv sync
+uv run streamlit run hub/app.py
+```
+
+On first launch, load the sample portfolio to look around, or start fresh and add your own accounts.
+
+- **Earning rate:** what your money earns per hour, day, month and year, plus a live counter of today's earnings. Shows actual returns against your expectations, cash income from dividends and interest, how much earning power extra monthly investing adds, your freedom number, and which bills your earnings already cover.
+- **Portfolio:** value against what you put in, per-account returns (money-weighted, XIRR), and allocation by type and platform.
+- **Check-in:** a monthly routine to type in each account's value, plus logging deposits, withdrawals, dividends and interest.
+- **Settings:** your accounts and expected returns, pay, expenses, and the bills to track.
+
+Data is stored as plain CSV/JSON in `data/hub/`, which git ignores. Set `FINANCE_HUB_DATA` to store it elsewhere.
+
+**How the numbers work:** deposits and withdrawals are your own money moving in or out. Dividends and interest are earnings paid into the account; if you move them out, log a withdrawal. A valuation is an account's total value on that date, and between valuations the hub estimates value as the last valuation plus anything logged since. Earnings are always the change in value minus your net deposits.
+
+Run the tests with `uv run pytest`.
+
+---
+
 ## Project Ideas
 
 ### 1. Budgeting and Expense Tracker

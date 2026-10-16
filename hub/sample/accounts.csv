@@ -1,0 +1,6 @@
+account,type,platform,expected_return_pct,notes
+US ETFs,ETF / Index fund,Broker,8.0,
+PSE index fund,ETF / Index fund,Broker,8.0,
+MP2,MP2,Pag-IBIG,7.0,Dividend credited each March
+Time deposit,Time deposit,Bank,4.8,"6% gross, after 20% tax"
+Emergency fund,Savings,Digital bank,3.2,"4% gross, after 20% tax"
